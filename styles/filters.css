@@ -31,9 +31,9 @@
 .filters .filter-list label { gap: 8px; font-size: 11px; line-height: 1.25; }
 .filters .filter-list input { flex: 0 0 14px; width: 14px; height: 14px; }
 .filters .compact > span { padding: 0 15px 11px; background: #edf5ff; font-size: 11px; }
-.filters .category-filter-list { display: grid; gap: 0; padding: 7px 15px 12px; background: #edf5ff; }
-.filters .category-filter-list a { padding: 7px 0; color: #30353a; font-size: 11px; line-height: 1.35; }
-.filters .category-filter-list a:hover { color: #3272dc; }
+.filters .category-filter-list { gap: 11px; padding: 14px 15px 16px; background: #fff; }
+.filters .category-filter-list label { align-items: flex-start; color: #30353a; line-height: 1.35; }
+.filters .category-filter-list input { margin-top: 1px; }
 .filters .filter-actions { position: sticky; bottom: 0; z-index: 2; padding: 12px 15px; gap: 8px; border-top: 1px solid #d6e4f7; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); }
 .filters .filter-actions button { min-height: 34px; padding: 8px 10px; font-size: 11px; }
 @media (max-width: 900px) { .filters { position: relative; top: auto; max-height: none; overflow: visible; } .filters .filter-actions { position: static; } }
