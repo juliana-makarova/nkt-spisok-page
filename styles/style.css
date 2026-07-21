@@ -81,7 +81,7 @@
 .card-main h3{max-width:540px;margin:0 0 7px;font-size:18px;line-height:1.18}
 .card-subtitle{margin:0 0 22px;color:#444;font-size:14px}
 .card-info{display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;align-items:start}
-.card-photo{width:132px;height:120px;border:1px solid var(--line);object-fit:contain}
+.card-photo{display:block;width:132px;height:120px;border:1px solid var(--line);object-fit:cover}
 .card-info dl{display:grid;grid-template-columns:110px minmax(0,1fr);gap:7px 12px;margin:0;font-size:11px}
 .card-info dt{color:#777}.card-info dd{margin:0;color:#222}.card-info dd a{color:var(--blue);font-weight:bold}
 .card-info dd img{width:13px;height:13px;margin-left:4px;vertical-align:-2px}
