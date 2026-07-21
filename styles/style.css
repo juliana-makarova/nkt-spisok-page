@@ -107,10 +107,14 @@
 .table-scroll .price-head span,.table-scroll .prices b,.card-price-head span,.card-prices b{width:100%;text-align:center}
 
 /* Align list-view toolbar to the reference */
-.table-tools{align-items:center;min-height:40px}
-.view-toggle{height:50px;flex:0 0 auto;border-radius:0}
+.table-tools{align-items:flex-start;min-height:50px}
+.view-toggle{height:50px;flex:0 0 auto;align-self:flex-start;border-radius:0}
 .view-toggle button{width:42px;min-width:42px;min-height:48px;height:48px;padding:7px;border-radius:0;outline:0;box-shadow:none;appearance:none}
 .view-toggle button:focus,.view-toggle button:focus-visible{outline:0;box-shadow:none}
+.table-actions{height:50px;align-items:stretch}
+.table-actions>button{height:50px;min-height:50px}
+.csv-download{display:flex;align-items:center;justify-content:center;gap:10px}
+.csv-download img{display:block;width:16px;height:16px;flex:0 0 16px}
 .list-controls:not([hidden]){display:grid;grid-template-columns:minmax(120px,1fr) auto minmax(120px,1fr);align-items:center;width:100%;height:38px}
 .list-controls>span{justify-self:start;white-space:nowrap}
 .list-controls>label{justify-self:center;white-space:nowrap}
