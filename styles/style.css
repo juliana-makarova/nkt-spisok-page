@@ -45,3 +45,13 @@
 .table-scroll .sticky{left:0}
 .table-scroll .pdf{border-width:1px}
 .table-scroll .buy-col small{white-space:nowrap}
+
+/* Interactive table scrollbar and supplied view icons */
+.view-toggle button{display:grid;place-items:center;min-width:42px}
+.view-toggle img{display:block;width:24px;height:20px}
+.scroll-info{align-items:center;margin:22px 0 32px}
+.scroll-info>span{padding:0;order:0}
+.scroll-info .scrollbar{height:7px;margin:0;border:0;border-radius:5px;background:#e4f0ff;cursor:pointer;touch-action:none;user-select:none}
+.scroll-info .scrollbar:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.scroll-info .scrollbar i{top:0;bottom:auto;height:7px;border-radius:5px;background:#bdd8fb;cursor:grab}
+.scroll-info .scrollbar:active i{cursor:grabbing;background:#99c1f5}
