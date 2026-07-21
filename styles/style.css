@@ -116,3 +116,10 @@
 .list-controls>nav{justify-self:end;white-space:nowrap}
 .list-controls nav button{height:30px;min-height:30px}
 @media(max-width:760px){.list-controls:not([hidden]){grid-template-columns:1fr auto;height:auto}.list-controls>label{justify-self:end}.list-controls>nav{grid-column:1/-1;justify-self:end}}
+
+/* Technical columns after Brand */
+.table-scroll table{width:1345px;min-width:1345px}
+.table-scroll .connector-col{width:135px}
+.table-scroll .return-loss-col{width:180px}
+.table-scroll .length-col{width:90px;text-align:center}
+.table-scroll th.return-loss-col{white-space:normal;line-height:1.25}
