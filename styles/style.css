@@ -103,7 +103,7 @@
 
 /* Center price columns in both views */
 .table-scroll .price-head,.table-scroll .prices{display:grid;grid-template-columns:25px 58px 1fr;justify-items:center;text-align:center}
-.card-price-head,.card-prices{display:grid;grid-template-columns:24px 52px 1fr;justify-items:center;text-align:center}
+.card-price-head,.card-prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;justify-items:center;text-align:center}
 .table-scroll .price-head span,.table-scroll .prices b,.card-price-head span,.card-prices b{width:100%;text-align:center}
 
 /* Align list-view toolbar to the reference */
