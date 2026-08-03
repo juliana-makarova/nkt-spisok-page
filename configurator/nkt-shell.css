@@ -23,4 +23,7 @@ input,textarea{padding-left:16px;padding-right:16px}
 .assembly-map{border:0}
 .next-step{font-weight:500}
 .next-step::after{content:"→";display:inline-block;margin-left:12px;font-size:18px;font-weight:400;line-height:0;vertical-align:-1px}
+.link-button{border:1px solid currentColor;background:var(--white);padding:11px 16px;text-decoration:none}
+.help a{display:inline-flex;width:max-content;align-items:center;border:1px solid currentColor;padding:11px 18px;text-decoration:none}
+.link-button:hover,.help a:hover{background:var(--white);text-decoration:none}
 @media(max-width:900px){.head-icons{display:none}.brand{width:118px;height:52px}.config-grid{grid-template-columns:1fr}}
