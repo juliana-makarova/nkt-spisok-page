@@ -37,6 +37,9 @@ input,textarea{padding-left:16px;padding-right:16px}
 .component-document{width:auto;margin:16px 0 0 46px;padding:11px 16px;border-width:1px;font-weight:400}
 .component-document:disabled{color:var(--muted);border-color:var(--line);cursor:not-allowed}
 .review-section .section-title{margin-bottom:18px}
+.required-block{position:relative;padding-left:16px;padding-right:16px}
+.required-block.required-missing{border:1px solid #cf3f46;background:#fff1f2;margin-top:12px;margin-bottom:12px}
+.required-block.required-missing::after{content:"Обязательное поле";display:block;margin:18px 0 0 46px;color:#b52f36;font-size:12px;font-weight:400}
 .review-data,.calculation-preview{margin:0 0 0 46px;border-top:1px solid var(--line)}
 .review-data div,.calculation-preview div{display:grid;grid-template-columns:minmax(180px,1fr) minmax(180px,1.25fr);gap:28px;padding:13px 0;border-bottom:1px solid var(--line)}
 .review-data dt,.calculation-preview dt{color:var(--muted)}
@@ -45,5 +48,5 @@ input,textarea{padding-left:16px;padding-right:16px}
 .data-note,.review-section>p{margin:16px 0 0 46px;color:var(--muted);font-size:13px}
 #infoContent{background:var(--pale);padding:16px;margin:18px 0}
 @media(max-width:900px){.head-icons{display:none}.brand{width:118px;height:52px}.config-grid{grid-template-columns:1fr}}
-@media(max-width:560px){.component-document,.review-data,.calculation-preview,.data-note,.review-section>p{margin-left:0}.review-data div,.calculation-preview div{grid-template-columns:1fr;gap:5px}.review-data dd,.calculation-preview dd{text-align:left}}
+@media(max-width:560px){.component-document,.review-data,.calculation-preview,.data-note,.review-section>p{margin-left:0}.required-block.required-missing::after{margin-left:0}.review-data div,.calculation-preview div{grid-template-columns:1fr;gap:5px}.review-data dd,.calculation-preview dd{text-align:left}}
 @media print{.config-form{display:block!important}.step-panel{display:none!important}.step-panel[data-panel="2"]{display:block!important}.step-actions{display:none!important}.review-intro,.review-section{display:block!important;break-inside:avoid}.review-intro{border:0;padding:24px 0}.review-data,.calculation-preview,.data-note,.review-section>p{margin-left:0}}

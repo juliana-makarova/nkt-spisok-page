@@ -39,6 +39,11 @@ function componentsValid(){return Boolean(state.a&&state.b&&state.cable)}
 function paramsValid(){const l=lengthMeters(),f=frequencyValue();return componentsValid()&&l>=state.cable.min&&l<=state.cable.max&&f>0}
 function selectedTests(){return [...document.querySelectorAll('[name="test"]:checked')].map(x=>x.value)}
 function connectorSymbol(conn){if(!conn||conn.id==='OPEN')return '—';return conn.shape==='Угловой'?'⌐':conn.shape==='Панельный'?'▣':'↔'}
+function updateRequiredBlocks(){
+ const l=lengthMeters(),lengthIsValid=Boolean(state.cable)&&l>=state.cable.min&&l<=state.cable.max;
+ const missing={connectorA:!state.a,cable:!state.cable,connectorB:!state.b,assemblyParameters:!lengthIsValid||frequencyValue()<=0};
+ Object.entries(missing).forEach(([id,isMissing])=>{$(id).classList.toggle('required-missing',isMissing);$(id).setAttribute('aria-invalid',String(isMissing))});
+}
 
 function goToStep(step){
  if(step>state.maxStep)return;state.step=step;
@@ -61,7 +66,7 @@ function updateSummary(){
  $('reviewDocuments').textContent=tests.length?`Спецификация сборки; ${tests.map(x=>'протокол: '+x.toLowerCase()).join('; ')}.`:'Спецификация сборки. Протоколы испытаний не выбраны.';
  const status=$('status');let message='Выберите разъёмы и кабель',kind='warning';if(complete&&!valid){kind='warning';message=frequencyValue()?`Проверьте длину: для ${state.cable.name} допустимо ${state.cable.min}–${state.cable.max} м`:'Укажите рабочую частоту'}if(valid){kind='valid';message=state.step===2?'Готово к отправке':'Обязательные данные заполнены'}status.className='status '+kind;status.querySelector('span').textContent=message;
  const code=complete?`НКТ-${state.a.type}-${state.cable.id}-${state.b.type}-${String(Math.round(l*1000)).padStart(4,'0')}`:'Сборка не завершена';$('assemblyCode').textContent=code;$('price').textContent=complete?money(state.a.price+state.b.price+state.cable.meter*l+1200):'—';$('addToCart').disabled=!(valid&&state.step===2);$('cableDatasheet').disabled=!state.cable;
- updateNavigation();history.replaceState(null,'','#'+new URLSearchParams({a:state.a?.id||'',c:state.cable?.id||'',b:state.b?.id||'',l:$('length').value,u:$('lengthUnit').value,f:frequencyValue()||'',s:state.step}).toString());
+ updateRequiredBlocks();updateNavigation();history.replaceState(null,'','#'+new URLSearchParams({a:state.a?.id||'',c:state.cable?.id||'',b:state.b?.id||'',l:$('length').value,u:$('lengthUnit').value,f:frequencyValue()||'',s:state.step}).toString());
 }
 function renderAll(){renderConnectors('a');renderConnectors('b');renderCables();updateSummary()}
 document.addEventListener('click',e=>{const c=e.target.closest('.choice');if(c?.dataset.side)selectConnector(c.dataset.side,c.dataset.id);if(c?.dataset.cable)selectCable(c.dataset.cable);const n=e.target.closest('[data-focus]');if(n){$(n.dataset.focus).scrollIntoView({behavior:'smooth',block:'center'})}const next=e.target.closest('[data-next]');if(next&&!next.disabled)goToStep(Number(next.dataset.next));const prev=e.target.closest('[data-prev]');if(prev)goToStep(Number(prev.dataset.prev));const tab=e.target.closest('[data-step]');if(tab&&!tab.disabled)goToStep(Number(tab.dataset.step))});
