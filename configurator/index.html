@@ -56,7 +56,7 @@
       <div class="config-grid">
         <form class="config-form" id="configForm">
           <div class="step-panel active" data-panel="0">
-          <section class="form-section" id="connectorA">
+          <section class="form-section required-block" id="connectorA">
             <div class="section-title"><span>01</span><div><h2>Разъём A</h2><p>Со стороны оборудования</p></div></div>
             <div class="field-grid">
               <label>Интерфейс<select id="typeA"><option value="">Выберите</option></select></label>
@@ -67,7 +67,7 @@
             <div class="choice-list" id="listA"></div>
           </section>
 
-          <section class="form-section" id="cable">
+          <section class="form-section required-block" id="cable">
             <div class="section-title"><span>02</span><div><h2>Кабель</h2><p>Среда передачи</p></div></div>
             <div class="field-grid">
               <label>Тип кабеля<select id="cableType"><option value="">Выберите</option></select></label>
@@ -76,7 +76,7 @@
             <button class="secondary component-document" id="cableDatasheet" type="button" disabled>Техническое описание кабеля</button>
           </section>
 
-          <section class="form-section" id="connectorB">
+          <section class="form-section required-block" id="connectorB">
             <div class="section-title"><span>03</span><div><h2>Разъём B</h2><p>Со стороны устройства</p></div></div>
             <div class="field-grid">
               <label>Интерфейс<select id="typeB"><option value="">Выберите</option></select></label>
@@ -91,7 +91,7 @@
           </div>
 
           <div class="step-panel" data-panel="1">
-          <section class="form-section">
+          <section class="form-section required-block" id="assemblyParameters">
             <div class="section-title"><span>04</span><div><h2>Длина и рабочая частота</h2><p>Параметры для изготовления и расчёта</p></div></div>
             <div class="field-grid">
               <label>Длина сборки<div class="input-pair"><input id="length" type="number" min="0.15" max="100" step="0.1" value="1"><select id="lengthUnit" aria-label="Единица длины"><option value="m">м</option><option value="cm">см</option><option value="mm">мм</option></select></div></label>
