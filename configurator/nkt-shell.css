@@ -21,6 +21,7 @@ input,textarea{padding-left:16px;padding-right:16px}
 .choice{padding:16px 17px}
 .choice.selected{border-width:1px;padding:16px 17px}
 .choice b{margin-left:auto;text-align:right}
+.summary dl div{grid-template-columns:72px minmax(0,1fr)}
 .summary dd{min-width:0;overflow-wrap:anywhere}
 #summaryOptions{padding-right:0}
 .assembly-map{border:0}
