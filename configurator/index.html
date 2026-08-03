@@ -32,7 +32,7 @@
 
   <main>
     <section class="hero">
-      <div class="breadcrumbs">Каталог / Кабельные сборки / Конфигуратор</div>
+      <div class="breadcrumbs">Главная / Конфигуратор кабельных сборок</div>
       <div class="hero-grid">
         <div>
           <p class="eyebrow">Инженерный инструмент НКТ</p>
@@ -48,9 +48,9 @@
       </ol>
 
       <div class="assembly-map" aria-label="Состав кабельной сборки">
-        <button class="assembly-node selected" type="button" data-focus="connectorA"><small>Разъём A</small><strong id="mapA">Не выбран</strong></button>
+        <button class="assembly-node selected" type="button" data-focus="connectorA"><span class="connector-symbol" id="symbolA">—</span><small>Разъём A</small><strong id="mapA">Не выбран</strong></button>
         <div class="cable-line"><span></span><em id="mapLength">1,0 м</em></div>
-        <button class="assembly-node" type="button" data-focus="connectorB"><small>Разъём B</small><strong id="mapB">Не выбран</strong></button>
+        <button class="assembly-node" type="button" data-focus="connectorB"><span class="connector-symbol" id="symbolB">—</span><small>Разъём B</small><strong id="mapB">Не выбран</strong></button>
       </div>
 
       <div class="config-grid">
@@ -61,6 +61,8 @@
             <div class="field-grid">
               <label>Интерфейс<select id="typeA"><option value="">Выберите</option></select></label>
               <label>Исполнение<select id="genderA"><option value="male">Вилка</option><option value="female">Розетка</option></select></label>
+              <label>Форма<select id="shapeA"><option value="Прямой">Прямой</option><option value="Угловой">Угловой</option><option value="Панельный">Панельный</option></select></label>
+              <label>Тип монтажа<select id="mountA"><option value="Обжим">Обжим</option><option value="Пайка">Пайка</option><option value="Сборный">Сборный</option></select></label>
             </div>
             <div class="choice-list" id="listA"></div>
           </section>
@@ -71,6 +73,7 @@
               <label>Тип кабеля<select id="cableType"><option value="">Выберите</option></select></label>
             </div>
             <div class="choice-list" id="listCable"></div>
+            <button class="secondary component-document" id="cableDatasheet" type="button" disabled>Техническое описание кабеля</button>
           </section>
 
           <section class="form-section" id="connectorB">
@@ -78,6 +81,8 @@
             <div class="field-grid">
               <label>Интерфейс<select id="typeB"><option value="">Выберите</option></select></label>
               <label>Исполнение<select id="genderB"><option value="male">Вилка</option><option value="female">Розетка</option></select></label>
+              <label>Форма<select id="shapeB"><option value="Прямой">Прямой</option><option value="Угловой">Угловой</option><option value="Панельный">Панельный</option></select></label>
+              <label>Тип монтажа<select id="mountB"><option value="Обжим">Обжим</option><option value="Пайка">Пайка</option><option value="Сборный">Сборный</option></select></label>
             </div>
             <div class="choice-list" id="listB"></div>
           </section>
@@ -108,6 +113,31 @@
 
           <div class="step-panel" data-panel="2">
             <section class="form-section review-intro"><p class="eyebrow">Финальная проверка</p><h2>Проверьте состав перед отправкой</h2><p>На этом этапе доступны спецификация, предварительный расчёт и передача конфигурации в корзину. Значения в прототипе демонстрационные.</p></section>
+            <section class="form-section review-section">
+              <div class="section-title"><span>07</span><div><h2>Параметры запроса</h2><p>Все введённые данные будут переданы вместе с конфигурацией</p></div></div>
+              <dl class="review-data">
+                <div><dt>Маркировка</dt><dd id="reviewMarking">—</dd></div>
+                <div><dt>Тестирование</dt><dd id="reviewTests">Не выбрано</dd></div>
+                <div><dt>Дополнительные тесты</dt><dd id="reviewExtraTests">Не указаны</dd></div>
+                <div><dt>Комментарий менеджеру</dt><dd id="reviewComment">Не указан</dd></div>
+              </dl>
+            </section>
+            <section class="form-section review-section">
+              <div class="section-title"><span>08</span><div><h2>Расчётные характеристики</h2><p>Структура результата для согласования с инженерами</p></div></div>
+              <dl class="calculation-preview">
+                <div><dt>Вносимое ослабление — частота 1</dt><dd>Будет рассчитано</dd></div>
+                <div><dt>Вносимое ослабление — частота 2</dt><dd>Будет рассчитано</dd></div>
+                <div><dt>Вносимое ослабление — частота 3</dt><dd>Будет рассчитано</dd></div>
+                <div><dt>КСВН сборки</dt><dd>Будет рассчитано</dd></div>
+                <div><dt>Фазовый сдвиг</dt><dd>Будет рассчитано</dd></div>
+                <div><dt>Волновое сопротивление</dt><dd>Будет рассчитано</dd></div>
+              </dl>
+              <p class="data-note">Для численных значений требуются утверждённые характеристики компонентов и инженерные формулы.</p>
+            </section>
+            <section class="form-section review-section">
+              <div class="section-title"><span>09</span><div><h2>Документы по сборке</h2><p>Предварительный состав комплекта документов</p></div></div>
+              <p id="reviewDocuments">Документы будут определены выбранными видами тестирования.</p>
+            </section>
             <div class="step-actions"><button class="secondary prev-step" type="button" data-prev="1">Назад к параметрам</button></div>
           </div>
         </form>
@@ -141,6 +171,7 @@
   </main>
 
   <dialog id="cartDialog"><button class="dialog-close" aria-label="Закрыть">×</button><p class="eyebrow">Корзина</p><h2>Конфигурация добавлена</h2><div id="cartContent"></div><button class="primary" type="button" onclick="this.closest('dialog').close()">Продолжить</button></dialog>
+  <dialog id="infoDialog"><button class="dialog-close" aria-label="Закрыть">×</button><p class="eyebrow">Документ компонента</p><h2>Техническое описание кабеля</h2><div id="infoContent"></div><button class="primary" type="button" onclick="this.closest('dialog').close()">Закрыть</button></dialog>
   <script src="configurator.js"></script>
 </body>
 </html>
