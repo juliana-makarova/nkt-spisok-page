@@ -20,6 +20,7 @@ input,textarea{padding-left:16px;padding-right:16px}
 .choice{padding:16px 17px}
 .choice.selected{padding:15px 16px}
 .choice b{margin-left:auto;text-align:right}
+#summaryOptions{padding-right:12px}
 .assembly-map{border:0}
 .assembly-node{position:relative;padding-left:54px}
 .assembly-node.selected,.assembly-node:hover{padding-left:53px}
