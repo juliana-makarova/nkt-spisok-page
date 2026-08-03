@@ -8,4 +8,17 @@
 .head-icons b{color:var(--blue)}
 .config-grid{grid-template-columns:minmax(0,1fr) 255px;gap:45px}
 .summary{top:20px}
+
+/* Уточнения типографики и полей по дизайн-ревью */
+.site-header nav a{font-weight:400}
+.site-search b{font-size:28px;font-weight:300;line-height:1;padding:5px 14px}
+.site-search input,select,input,textarea{font-weight:300}
+input::placeholder,textarea::placeholder,.site-search input::placeholder{font-weight:300;color:#777;opacity:1}
+label,.field-grid label{color:var(--text);font-weight:400}
+select{appearance:none;padding-left:16px;padding-right:44px;background-image:linear-gradient(45deg,transparent 50%,var(--text) 50%),linear-gradient(135deg,var(--text) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+input,textarea{padding-left:16px;padding-right:16px}
+.choice{padding:16px 17px}
+.choice.selected{padding:15px 16px}
+.choice b{margin-left:auto;text-align:right}
+.assembly-map{border:0}
 @media(max-width:900px){.head-icons{display:none}.brand{width:118px;height:52px}.config-grid{grid-template-columns:1fr}}
