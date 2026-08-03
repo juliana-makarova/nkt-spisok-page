@@ -21,7 +21,8 @@ input,textarea{padding-left:16px;padding-right:16px}
 .choice{padding:16px 17px}
 .choice.selected{border-width:1px;padding:16px 17px}
 .choice b{margin-left:auto;text-align:right}
-#summaryOptions{padding-right:12px}
+.summary dd{min-width:0;overflow-wrap:anywhere}
+#summaryOptions{padding-right:0}
 .assembly-map{border:0}
 .assembly-node{position:relative;padding-left:54px}
 .assembly-node.selected,.assembly-node:hover{border-width:1px;padding:15px 17px 15px 54px}
