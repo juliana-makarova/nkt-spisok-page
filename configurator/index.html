@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Демонстрационный конфигуратор кабельных сборок НКТ">
+  <title>Конфигуратор кабельных сборок — НКТ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="configurator.css">
+  <link rel="stylesheet" href="wizard.css">
+  <link rel="stylesheet" href="nkt-shell.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand" href="../" aria-label="НКТ — на главную"><img src="../assets/logo/nkt-logo.svg" alt="НКТ"></a>
+      <label class="site-search"><input type="search" placeholder="Поиск по сайту" aria-label="Поиск по сайту"><b>⌕</b></label>
+      <div class="phone">+7 495 787 0550<small>10:00–18:00 | Пн–Пт</small></div>
+      <div class="head-icons">
+        <a href="#"><img src="../assets/icons/wishlist.svg" alt=""><small>Списки<br>товаров</small></a>
+        <a href="#"><img src="../assets/icons/compare.svg" alt=""><small>Сравнить</small></a>
+        <button id="cartButton" type="button"><img src="../assets/icons/cart.svg" alt=""><small>Корзина <b id="cartCount">0</b></small></button>
+        <a href="#"><img src="../assets/icons/account.svg" alt=""><small>Личный<br>кабинет</small></a>
+      </div>
+    </div>
+    <nav aria-label="Основная навигация">
+      <a class="active" href="../">Каталог</a><a href="#">Применение</a><a href="#">Производители</a><a href="#">О компании</a><a href="#">Производство</a><a href="#">Новости</a><a href="#">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="breadcrumbs">Каталог / Кабельные сборки / Конфигуратор</div>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Инженерный инструмент НКТ</p>
+          <h1>Соберите кабельную сборку под вашу задачу</h1>
+        </div>
+        <p class="hero-copy">Выберите совместимые разъёмы и кабель. Конфигуратор проверит ограничения и подготовит состав сборки для запроса.</p>
+      </div>
+    </section>
+
+    <section class="workspace" id="configurator">
+      <ol class="stepper" aria-label="Этапы конфигурации">
+        <li class="active"><button type="button" data-step="0"><span>01</span>Компоненты</button></li><li><button type="button" data-step="1" disabled><span>02</span>Параметры</button></li><li><button type="button" data-step="2" disabled><span>03</span>Проверка</button></li>
+      </ol>
+
+      <div class="assembly-map" aria-label="Состав кабельной сборки">
+        <button class="assembly-node selected" type="button" data-focus="connectorA"><small>Разъём A</small><strong id="mapA">Не выбран</strong></button>
+        <div class="cable-line"><span></span><em id="mapLength">1,0 м</em></div>
+        <button class="assembly-node" type="button" data-focus="connectorB"><small>Разъём B</small><strong id="mapB">Не выбран</strong></button>
+      </div>
+
+      <div class="config-grid">
+        <form class="config-form" id="configForm">
+          <div class="step-panel active" data-panel="0">
+          <section class="form-section" id="connectorA">
+            <div class="section-title"><span>01</span><div><h2>Разъём A</h2><p>Со стороны оборудования</p></div></div>
+            <div class="field-grid">
+              <label>Интерфейс<select id="typeA"><option value="">Выберите</option></select></label>
+              <label>Исполнение<select id="genderA"><option value="male">Вилка</option><option value="female">Розетка</option></select></label>
+            </div>
+            <div class="choice-list" id="listA"></div>
+          </section>
+
+          <section class="form-section" id="cable">
+            <div class="section-title"><span>02</span><div><h2>Кабель</h2><p>Среда передачи</p></div></div>
+            <div class="field-grid">
+              <label>Тип кабеля<select id="cableType"><option value="">Выберите</option></select></label>
+            </div>
+            <div class="choice-list" id="listCable"></div>
+          </section>
+
+          <section class="form-section" id="connectorB">
+            <div class="section-title"><span>03</span><div><h2>Разъём B</h2><p>Со стороны устройства</p></div></div>
+            <div class="field-grid">
+              <label>Интерфейс<select id="typeB"><option value="">Выберите</option></select></label>
+              <label>Исполнение<select id="genderB"><option value="male">Вилка</option><option value="female">Розетка</option></select></label>
+            </div>
+            <div class="choice-list" id="listB"></div>
+          </section>
+
+          <div class="step-actions"><span>Выберите разъёмы и кабель</span><button class="primary next-step" type="button" data-next="1" disabled>Продолжить: параметры</button></div>
+          </div>
+
+          <div class="step-panel" data-panel="1">
+          <section class="form-section">
+            <div class="section-title"><span>04</span><div><h2>Длина и рабочая частота</h2><p>Параметры для изготовления и расчёта</p></div></div>
+            <div class="field-grid">
+              <label>Длина сборки<div class="input-pair"><input id="length" type="number" min="0.15" max="100" step="0.1" value="1"><select id="lengthUnit" aria-label="Единица длины"><option value="m">м</option><option value="cm">см</option><option value="mm">мм</option></select></div></label>
+              <label>Рабочая частота, МГц<select id="frequency"><option value="">Выберите</option><option>160</option><option>460</option><option>700</option><option>960</option><option>1800</option><option>2100</option><option>2600</option><option>3500</option><option value="custom">Своё значение</option></select></label>
+            </div>
+            <div class="field-grid conditional" id="customFrequencyWrap" hidden><span></span><label>Своё значение, МГц<input id="customFrequency" type="number" min="1" max="100000" placeholder="Введите частоту"></label></div>
+          </section>
+          <section class="form-section">
+            <div class="section-title"><span>05</span><div><h2>Маркировка</h2><p>Отдельный текст для каждого элемента</p></div></div>
+            <div class="field-grid three"><label>Разъём A<input id="markingA" maxlength="30" placeholder="Необязательно"></label><label>Кабель<input id="markingCable" maxlength="30" placeholder="Необязательно"></label><label>Разъём B<input id="markingB" maxlength="30" placeholder="Необязательно"></label></div>
+          </section>
+          <section class="form-section">
+            <div class="section-title"><span>06</span><div><h2>Опции и тестирование</h2><p>Будут переданы менеджеру вместе с конфигурацией</p></div></div>
+            <div class="checks"><label><input id="heatshrink" type="checkbox">Термоусадка</label><label><input name="test" type="checkbox" value="Вносимое ослабление">Вносимое ослабление</label><label><input name="test" type="checkbox" value="КСВН">КСВН</label><label><input name="test" type="checkbox" value="Фазовый сдвиг">Фазовый сдвиг</label></div>
+            <div class="field-grid text-fields"><label>Дополнительные тесты<textarea id="extraTests" rows="3" placeholder="Опишите требования в свободной форме"></textarea></label><label>Комментарий менеджеру<textarea id="comment" rows="3" placeholder="Условия эксплуатации и пожелания"></textarea></label></div>
+          </section>
+          <div class="step-actions"><button class="secondary prev-step" type="button" data-prev="0">Назад</button><button class="primary next-step" type="button" data-next="2" disabled>Продолжить: проверка</button></div>
+          </div>
+
+          <div class="step-panel" data-panel="2">
+            <section class="form-section review-intro"><p class="eyebrow">Финальная проверка</p><h2>Проверьте состав перед отправкой</h2><p>На этом этапе доступны спецификация, предварительный расчёт и передача конфигурации в корзину. Значения в прототипе демонстрационные.</p></section>
+            <div class="step-actions"><button class="secondary prev-step" type="button" data-prev="1">Назад к параметрам</button></div>
+          </div>
+        </form>
+
+        <aside class="summary" aria-live="polite">
+          <p class="eyebrow">Ваша конфигурация</p>
+          <h2 id="assemblyCode">Сборка не завершена</h2>
+          <div class="status warning" id="status"><i></i><span>Выберите три компонента</span></div>
+          <p class="summary-gate" id="summaryGate">Завершите обязательные шаги — действия станут доступны после проверки.</p>
+          <dl>
+            <div><dt>Разъём A</dt><dd id="summaryA">—</dd></div>
+            <div><dt>Кабель</dt><dd id="summaryCable">—</dd></div>
+            <div><dt>Разъём B</dt><dd id="summaryB">—</dd></div>
+            <div><dt>Длина</dt><dd id="summaryLength">1,0 м</dd></div>
+            <div><dt>Частота</dt><dd id="summaryFrequency">—</dd></div>
+            <div><dt>Опции</dt><dd id="summaryOptions">—</dd></div>
+          </dl>
+          <div class="final-actions" id="finalActions" hidden>
+          <div class="price"><span>Ориентировочная стоимость</span><strong id="price">—</strong><small>Демонстрационный расчёт, не оферта</small></div>
+          <button class="primary" id="addToCart" type="button" disabled>Добавить в корзину</button>
+          <button class="secondary" id="printButton" type="button">Скачать спецификацию</button>
+          </div>
+          <button class="link-button" id="resetButton" type="button">Сбросить конфигурацию</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="help" id="help">
+      <p class="eyebrow">Не уверены в выборе?</p><h2>Подключим инженера НКТ</h2><p>Опишите оборудование, частотный диапазон и условия эксплуатации. Специалист поможет проверить совместимость.</p><a href="mailto:info@nkt.ru">Отправить задачу</a>
+    </section>
+  </main>
+
+  <dialog id="cartDialog"><button class="dialog-close" aria-label="Закрыть">×</button><p class="eyebrow">Корзина</p><h2>Конфигурация добавлена</h2><div id="cartContent"></div><button class="primary" type="button" onclick="this.closest('dialog').close()">Продолжить</button></dialog>
+  <script src="configurator.js"></script>
+</body>
+</html>

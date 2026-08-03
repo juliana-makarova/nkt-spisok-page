@@ -1,0 +1,11 @@
+/* Общая сетка и шапка прототипов nkt.ru */
+.brand{display:flex;width:142px;height:64px;align-items:center}
+.brand img{display:block;width:100%;height:100%;object-fit:contain}
+.head-icons{margin-left:auto;display:flex;gap:24px}
+.head-icons a,.head-icons button{display:flex;min-width:52px;flex-direction:column;align-items:center;justify-content:center;border:0;background:#fff;color:var(--text);padding:0;text-align:center;cursor:pointer}
+.head-icons img{display:block;width:22px;height:22px;object-fit:contain;margin-bottom:5px}
+.head-icons small{display:block;font-size:12px;font-weight:400;color:#888;line-height:1.2}
+.head-icons b{color:var(--blue)}
+.config-grid{grid-template-columns:minmax(0,1fr) 255px;gap:45px}
+.summary{top:20px}
+@media(max-width:900px){.head-icons{display:none}.brand{width:118px;height:52px}.config-grid{grid-template-columns:1fr}}

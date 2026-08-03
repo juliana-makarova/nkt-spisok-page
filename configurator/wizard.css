@@ -1,0 +1,27 @@
+.stepper li{padding:0;margin-right:0;flex:1}
+.stepper button{width:100%;border:0;background:var(--white);padding:16px 12px;text-align:left;color:var(--muted);cursor:pointer}
+.stepper li.active button{color:var(--text);font-weight:700}
+.stepper li.completed button{color:var(--blue)}
+.stepper button:disabled{color:var(--line);cursor:not-allowed}
+.step-panel{display:none}
+.step-panel.active{display:block}
+.step-actions{display:flex;align-items:center;justify-content:flex-end;gap:18px;padding:24px 0}
+.step-actions>span{margin-right:auto;color:var(--muted);font-size:12px}
+.step-actions .primary,.step-actions .secondary{width:auto;min-width:190px;margin:0}
+.input-pair{display:grid;grid-template-columns:1fr 78px}
+.input-pair select{border-left:0}
+.field-grid.three{grid-template-columns:repeat(3,1fr)}
+textarea{width:100%;resize:vertical;border:1px solid var(--line);background:var(--white);padding:12px;outline:none;font:inherit}
+.checks{margin-left:46px;display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line)}
+.checks label{display:flex;align-items:center;gap:10px;padding:13px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--text);font-weight:400}
+.checks input{appearance:none;width:16px;height:16px;flex:0 0 16px;padding:0;border:1.5px solid var(--blue)}
+.checks input:checked{background:var(--blue);box-shadow:inset 0 0 0 4px var(--white)}
+.text-fields{margin-top:16px}
+.review-intro{padding:38px;background:var(--pale);border:1px solid var(--line)}
+.review-intro h2{font-size:26px;margin:0 0 10px}
+.review-intro p:last-child{max-width:650px;color:#444}
+.summary-gate{background:var(--pale);padding:12px;font-size:12px;color:#444}
+.final-actions[hidden],.conditional[hidden]{display:none}
+.choice .availability{color:var(--muted);font-weight:400}
+.choice .availability.in-stock{color:var(--blue)}
+@media(max-width:700px){.field-grid.three{grid-template-columns:1fr}.checks{margin-left:0;grid-template-columns:1fr}.stepper li{font-size:14px;margin:0}.stepper button{font-size:12px}.step-actions{align-items:stretch;flex-direction:column}.step-actions>span{margin:0}.step-actions .primary,.step-actions .secondary{width:100%}}
