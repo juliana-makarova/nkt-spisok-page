@@ -201,3 +201,6 @@ h2,.request h2{font-size:var(--type-h2);font-weight:500;line-height:1.12;letter-
 .selection-control-action .button{min-height:52px;padding:14px 25px;text-transform:uppercase;letter-spacing:.25px}
 @media(max-width:1100px){.landing-nav>.shell>div{gap:18px}.landing-nav a{font-size:12px}.brand-section-head,.selection-control-head{gap:55px}.selection-control-column{padding:34px 30px}}
 @media(max-width:760px){.brand-section{padding:70px 0}.brand-section-head,.selection-control-head{grid-template-columns:1fr;gap:24px}.brand-pillars{grid-template-columns:1fr;margin-top:36px}.brand-pillars article{min-height:0}.selection-control-board{grid-template-columns:1fr;margin-top:36px}.selection-control-column{padding:30px 25px}.selection-control-column+ .selection-control-column{border-top:1px solid #dce4eb;border-left:0}.selection-control-item{grid-template-columns:32px minmax(0,1fr)}.selection-control-action .button{width:100%}}
+
+/* Более свободная пластика крупных заголовков */
+h1,h2,.request h2,.custom-grid h2,.hero .hero-copy h1{font-weight:400;letter-spacing:.01em}
