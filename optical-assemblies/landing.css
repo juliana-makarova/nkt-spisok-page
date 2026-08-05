@@ -135,3 +135,41 @@ blockquote.expert-quote{grid-template-columns:210px minmax(0,1fr);gap:48px;align
 
 /* CTA проектного исполнения в единой системе с карточками применения */
 .cta-strip{background:linear-gradient(145deg,#1859b5 0%,#0d397d 100%);box-shadow:0 18px 42px rgba(16,60,121,.22)}
+
+/* Единая типографическая шкала лендинга */
+:root{--font-sans:Roboto,Arial,sans-serif;--type-h1:52px;--type-h2:42px;--type-h3:28px;--type-lead:20px;--type-body:16px;--type-small:13px;--type-label:11px}
+body,button,input,select,textarea{font-family:var(--font-sans)}
+body{font-size:var(--type-body);font-weight:300;line-height:1.55}
+h1,h2,h3{font-weight:500}
+h2,.request h2{font-size:var(--type-h2);font-weight:500;line-height:1.12;letter-spacing:-1.2px}
+.section-number,.eyebrow,.column-kicker{font-size:var(--type-label);font-weight:500;line-height:1.35;letter-spacing:1.3px}
+.lead{font-size:var(--type-lead);font-weight:300;line-height:1.5}
+.button,.text-link,.engineer-link{font-size:15px;font-weight:500}
+
+/* Одинаковая иерархия продуктовых карточек и производства */
+.series-panel h3{font-size:var(--type-h3);font-weight:500;line-height:1.18;letter-spacing:-.35px}
+.series-panel .lead,.production-head .lead,.custom-grid .lead{font-size:var(--type-lead);font-weight:300;line-height:1.5}
+.series-panel li,.production-grid p,.production-grid li,.custom-grid p:not(.section-number):not(.lead),.option-list li{font-size:var(--type-body);font-weight:300;line-height:1.55}
+.card-documents>span,.card-documents a,.note{font-weight:400}
+
+/* Компактные карточки и сервисные блоки */
+.application-grid h3{font-size:20px;font-weight:500;line-height:1.18;letter-spacing:-.15px}
+.application-grid p{font-size:var(--type-body);font-weight:300;line-height:1.5}
+.faq summary{font-size:18px;font-weight:500;line-height:1.4}
+.faq details p{font-size:var(--type-body);font-weight:300;line-height:1.55}
+.expert-quote-copy p{font-size:28px;font-weight:400;line-height:1.3;letter-spacing:-.35px}
+.expert-quote-copy footer b{font-size:16px;font-weight:500}.expert-quote-copy footer span{font-size:var(--type-small);font-weight:300}
+
+/* Первый экран — самостоятельный, но собран из тех же начертаний */
+.hero .hero-copy h1{font-size:var(--type-h1);font-weight:500;line-height:1.04;letter-spacing:-1.65px}
+.hero .column-kicker{font-size:var(--type-label);font-weight:500}
+.hero .hero-description-grid .lead{font-size:18px;font-weight:400;line-height:1.55}
+.hero .hero-description-grid p:not(.lead){font-size:15px;font-weight:300;line-height:1.62}
+.hero .hero-specs b{font-size:14px;font-weight:500}.hero .hero-specs span{font-size:12px;font-weight:300}
+
+/* Тёмные секции используют ту же шкалу, контраст задаётся цветом */
+.custom-grid h2,.request h2{font-size:var(--type-h2);font-weight:500;line-height:1.12}
+.option-list>p{font-size:16px;font-weight:500;line-height:1.4}
+.cta-strip strong{font-size:18px;font-weight:500;line-height:1.45}
+@media(max-width:950px){:root{--type-h1:44px;--type-h2:38px}}
+@media(max-width:650px){:root{--type-h1:38px;--type-h2:32px;--type-h3:25px;--type-lead:18px}.expert-quote-copy p{font-size:22px}.hero .hero-description-grid .lead{font-size:17px}.hero .hero-description-grid p:not(.lead){font-size:14px}}
