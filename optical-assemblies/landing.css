@@ -125,3 +125,10 @@ blockquote.expert-quote{grid-template-columns:210px minmax(0,1fr);gap:48px;align
 .expert-quote-copy footer{display:flex;align-items:flex-start;flex-direction:column}
 @media(max-width:650px){blockquote.expert-quote{grid-template-columns:150px minmax(0,1fr);gap:25px}.expert-photo{min-height:190px}.expert-quote-copy{padding:2px 0}}
 @media(max-width:480px){blockquote.expert-quote{grid-template-columns:1fr}.expert-photo{width:150px;min-height:188px}}
+
+/* Вкладки серий поддерживают диагональную графику финальной формы */
+.series-tabs button:not(.active){border-bottom-color:#164a9b;background:linear-gradient(130deg,#164a9b 0 58%,#126bb1 58% 100%);color:rgba(255,255,255,.76)}
+.series-tabs button:not(.active) b{color:#fff}
+.series-tabs button:not(.active):hover{background:linear-gradient(130deg,#1b57ad 0 58%,#1680c4 58% 100%)}
+.series-tabs button.active{border-bottom-color:#fff;background:#fff;color:#1d56ac;box-shadow:inset 0 2px 0 #2464ca}
+.series-tabs button.active b{color:#172a42}
