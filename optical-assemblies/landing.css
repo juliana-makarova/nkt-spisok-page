@@ -132,3 +132,6 @@ blockquote.expert-quote{grid-template-columns:210px minmax(0,1fr);gap:48px;align
 .series-tabs button:not(.active):hover{background:linear-gradient(130deg,#1b57ad 0 58%,#1680c4 58% 100%)}
 .series-tabs button.active{border-bottom-color:#fff;background:#fff;color:#1d56ac;box-shadow:inset 0 2px 0 #2464ca}
 .series-tabs button.active b{color:#172a42}
+
+/* CTA проектного исполнения в единой системе с карточками применения */
+.cta-strip{background:linear-gradient(145deg,#1859b5 0%,#0d397d 100%);box-shadow:0 18px 42px rgba(16,60,121,.22)}
