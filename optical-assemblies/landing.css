@@ -175,17 +175,17 @@ h2,.request h2{font-size:var(--type-h2);font-weight:500;line-height:1.12;letter-
 @media(max-width:650px){:root{--type-h1:38px;--type-h2:32px;--type-h3:25px;--type-lead:18px}.expert-quote-copy p{font-size:22px}.hero .hero-description-grid .lead{font-size:17px}.hero .hero-description-grid p:not(.lead){font-size:14px}}
 
 /* Компактный экран бренда NKT PRO */
-.brand-section{padding:84px 0;border-top:1px solid #dfe7ee;border-bottom:1px solid #dfe7ee;background:#fff}
+.brand-section{--brand-diagonal:130deg;padding:84px 0;border-top:1px solid #dfe7ee;border-bottom:1px solid #dfe7ee;background:#fff}
 .brand-section-head,.selection-control-head{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:end}
 .brand-section-logo{display:block;width:250px;max-width:52%;height:auto;margin:0 0 28px}
 .brand-section-head h2,.selection-control-head h2{margin-bottom:0}
 .brand-section-head>.lead,.selection-control-head>.lead{margin:0}
 .brand-pillars{display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border-top:1px solid #dce4eb;border-left:1px solid #dce4eb}
-.brand-pillars article{min-height:215px;padding:28px 30px;border-right:1px solid #dce4eb;border-bottom:1px solid #dce4eb;background:linear-gradient(145deg,#fff 0 74%,#f1f7fb 74% 100%)}
+.brand-pillars article{min-height:215px;padding:28px 30px;border-right:1px solid #dce4eb;border-bottom:1px solid #dce4eb;background:linear-gradient(var(--brand-diagonal),#fff 0 74%,#f1f7fb 74% 100%)}
 .brand-pillars article>span{display:block;margin-bottom:28px;color:#1d56ac;font-size:var(--type-label);font-weight:500;letter-spacing:1px}
 .brand-pillars h3{margin-bottom:15px;font-size:20px;font-weight:500;line-height:1.18;letter-spacing:-.15px}
 .brand-pillars p{margin:0;color:#5b6877;font-size:var(--type-body);font-weight:300;line-height:1.5}
-.brand-statement{margin:34px 0 0;padding:27px 30px;border-left:0;background:linear-gradient(130deg,#1859b5 0 62%,#0d397d 62% 100%);box-shadow:0 16px 38px rgba(16,60,121,.2);color:#fff;font-size:20px;font-weight:500;line-height:1.4}
+.brand-statement{margin:34px 0 0;padding:27px 30px;border-left:0;background:linear-gradient(var(--brand-diagonal),#1859b5 0 62%,#0d397d 62% 100%);box-shadow:0 16px 38px rgba(16,60,121,.2);color:#fff;font-size:20px;font-weight:500;line-height:1.4}
 
 /* Единый экран инженерного подбора и контроля */
 .selection-control{border-top:1px solid #d9e5ed;background:#eef6fb}
