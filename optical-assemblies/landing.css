@@ -116,3 +116,12 @@
 .hero .hero-specs b{flex:0 0 auto;font-size:14px}.hero .hero-specs span{font-size:12px;line-height:1.35}
 @media(max-width:760px){.hero .hero-grid{gap:0}.hero .hero-copy{padding:26px 0 24px}.hero-description-grid{grid-template-columns:1fr;gap:18px}.hero-description-grid>div+div{padding:18px 0 0;border-top:1px solid #dfe6ed;border-left:0}.hero .hero-description-grid .lead{font-size:17px}.hero .hero-description-grid p:not(.lead){font-size:14px}.hero .actions{margin-top:25px}.hero .hero-specs{grid-template-columns:1fr 1fr;gap:13px 0;margin:0 0 24px;padding:15px 0}.hero .hero-specs li{padding:0 12px;border:0}.hero .hero-specs li:nth-child(odd){padding-left:0}.hero .hero-specs li:nth-child(even){padding-right:0}}
 @media(max-width:480px){.hero .hero-specs{grid-template-columns:1fr}.hero .hero-specs li,.hero .hero-specs li:nth-child(odd),.hero .hero-specs li:nth-child(even){padding:0}}
+
+/* Портрет эксперта в блоке производственного комментария */
+blockquote.expert-quote{grid-template-columns:210px minmax(0,1fr);gap:48px;align-items:stretch}
+.expert-photo{display:grid;min-height:260px;place-items:end start;padding:18px;border:1px solid #d4dee7;background:linear-gradient(145deg,#e7f1f7 0 54%,#d5e7f1 54% 100%);color:#557089}
+.expert-photo span{font-size:11px;letter-spacing:1px;line-height:1.5;text-transform:uppercase}
+.expert-quote-copy{display:flex;min-width:0;justify-content:space-between;flex-direction:column;padding:10px 0}
+.expert-quote-copy footer{display:flex;align-items:flex-start;flex-direction:column}
+@media(max-width:650px){blockquote.expert-quote{grid-template-columns:150px minmax(0,1fr);gap:25px}.expert-photo{min-height:190px}.expert-quote-copy{padding:2px 0}}
+@media(max-width:480px){blockquote.expert-quote{grid-template-columns:1fr}.expert-photo{width:150px;min-height:188px}}
