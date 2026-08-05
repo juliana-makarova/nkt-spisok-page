@@ -209,3 +209,6 @@ h1,h2,.request h2,.custom-grid h2,.hero .hero-copy h1{font-weight:400;letter-spa
 
 /* Более явное чередование светло-голубого и белого экранов */
 .faq{background:#fff}
+
+/* Основное описание hero совпадает по ступени с описанием серии */
+.hero .hero-description-grid .lead{font-size:var(--type-lead);font-weight:300;line-height:1.5}
