@@ -340,3 +340,10 @@
   .card-buy{border:0;padding:14px 14px 28px}
   .card-buy::before{content:"";position:absolute;top:24px;bottom:24px;left:50%;width:1px;background:var(--line);transform:translateX(-.5px)}
 }
+
+
+/* Align and space the mobile price divider */
+@media(max-width:720px){
+  .card-buy{column-gap:32px}
+  .card-buy::before{top:14px;bottom:22px}
+}
