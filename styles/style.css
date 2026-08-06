@@ -162,4 +162,35 @@
 .quantity span{border-left:1px solid var(--line);border-right:1px solid var(--line)}
 
 @media(max-width:900px){.categories{grid-template-columns:repeat(2,minmax(0,1fr))}.table-tools{overflow-x:auto}.table-actions,.list-controls{justify-self:start}.table-tools{grid-template-columns:auto max-content}.table-tools.list-mode .list-controls{grid-column:2}}
-@media(max-width:560px){.categories{grid-template-columns:1fr}}
+/* Mobile catalog layout */
+.table-quantity{grid-template-columns:20px minmax(0,1fr) 20px;max-width:100%;min-width:0}
+.table-quantity button{min-width:0;padding:0}
+.table-scroll .table-quantity input{min-width:0;padding:0;appearance:textfield}
+.table-scroll .table-quantity input::-webkit-inner-spin-button,.table-scroll .table-quantity input::-webkit-outer-spin-button{margin:0;appearance:none}
+
+@media(max-width:720px){
+  .product-card,.card-main,.card-info,.card-info dl,.card-info dd{min-width:0}
+  .product-card{width:100%}
+  .card-main{padding:22px 18px 18px}
+  .card-info{grid-template-columns:90px minmax(0,1fr);gap:12px}
+  .card-photo{width:90px;height:90px}
+  .card-info dl{grid-template-columns:72px minmax(0,1fr);gap:6px 8px}
+  .card-info dd{overflow-wrap:anywhere}
+  .all-specs,.card-pdf{margin-left:102px}
+  .card-buy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto auto 34px 34px;column-gap:12px;width:min(calc(100% - 32px),360px);justify-self:center;padding:14px;border:1px solid var(--line)}
+  .card-price-head{grid-column:1;grid-row:1;padding-right:14px;border-right:1px solid var(--line)}
+  .card-prices{grid-column:1;grid-row:2/6;align-content:start;padding:5px 14px 0 0;border-right:1px solid var(--line)}
+  .card-buy>a{grid-column:2;grid-row:1;margin:0 0 8px}
+  .card-buy>.quantity{grid-column:2;grid-row:2;align-self:start}
+  .card-buy>small{grid-column:2;grid-row:3;margin:5px 0 8px}
+  .card-buy>.list-cart{grid-column:2;grid-row:4;height:34px}
+  .card-buy>.list-compare{grid-column:2;grid-row:5;height:34px;margin-top:6px}
+  .table-tools{max-width:100%;min-width:0;grid-template-columns:auto minmax(0,1fr)}
+  .list-controls{min-width:0}
+}
+
+@media(max-width:560px){
+  .categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .categories a{height:190px;padding:8px 10px 12px;font-size:12px}
+  .categories img{height:132px}
+}
