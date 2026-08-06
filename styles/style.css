@@ -306,3 +306,23 @@
   .table-tools.list-mode .list-controls>label{grid-column:3;grid-row:1}
   .table-tools.list-mode .list-controls>nav{position:static;grid-column:4;grid-row:1;justify-self:end;transform:none}
 }
+
+
+/* Desktop table controls: one row below the action buttons */
+@media(min-width:901px){
+  .table-tools:not(.list-mode){grid-template-rows:44px 44px;min-height:106px}
+  .table-tools:not(.list-mode) .list-controls{
+    grid-column:1/-1;
+    grid-row:2;
+    grid-template-columns:1fr max-content max-content max-content;
+    grid-template-rows:44px;
+    width:100%;
+    height:44px;
+    row-gap:0;
+    column-gap:24px;
+    align-items:center;
+  }
+  .table-tools:not(.list-mode) .list-controls>span{grid-column:2;grid-row:1}
+  .table-tools:not(.list-mode) .list-controls>label{grid-column:3;grid-row:1}
+  .table-tools:not(.list-mode) .list-controls>nav{position:static;grid-column:4;grid-row:1;justify-self:end;transform:none}
+}
