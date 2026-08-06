@@ -229,3 +229,19 @@
 @media(max-width:720px){
   .card-price-head,.card-prices{padding-right:0;border-right:0}
 }
+
+
+/* Full-width pagination row in table mode */
+.list-controls nav{font-size:14px;line-height:1}
+.list-controls nav b,.list-controls nav button{font-size:14px}
+.table-tools:not(.list-mode) .list-controls{
+  grid-column:1/-1;
+  grid-template-columns:1fr 1fr 1fr;
+  width:100%;
+  justify-self:stretch;
+  column-gap:24px;
+}
+.table-tools:not(.list-mode) .list-controls>span{justify-self:start}
+.table-tools:not(.list-mode) .list-controls>label{justify-self:center}
+.table-tools:not(.list-mode) .list-controls>nav{justify-self:end}
+@media(max-width:900px){.table-tools:not(.list-mode){grid-template-columns:auto minmax(0,1fr)}}
