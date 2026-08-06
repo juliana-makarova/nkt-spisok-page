@@ -326,3 +326,10 @@
   .table-tools:not(.list-mode) .list-controls>label{grid-column:3;grid-row:1}
   .table-tools:not(.list-mode) .list-controls>nav{position:static;grid-column:4;grid-row:1;justify-self:end;transform:none}
 }
+
+
+/* Inset divider between product information and the price block */
+.card-buy{position:relative;border-left:0}
+@media(min-width:721px){
+  .card-buy::before{content:"";position:absolute;top:24px;bottom:24px;left:0;width:1px;background:var(--line)}
+}
