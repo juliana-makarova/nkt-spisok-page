@@ -225,3 +225,15 @@ body .hero .hero-description-grid p.lead{color:var(--text);font-size:var(--type-
 .option-cards span{display:block;color:#fff;font-size:14px;font-weight:400;line-height:1.35}
 @media(max-width:950px){.custom-grid{grid-template-columns:1fr}.option-list{padding:32px 0 0;border-top:1px solid #56657a;border-left:0}}
 @media(max-width:650px){.option-cards{grid-template-columns:1fr}.option-cards article{min-height:0}.option-list{padding-top:25px}}
+
+/* Первый экран на мобильных: единая вертикаль CTA и компактные параметры */
+@media(max-width:760px){
+  .hero .actions{width:100%;align-items:flex-start}
+  .hero .actions .text-link{align-self:flex-start}
+  .hero .hero-specs{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0 0 24px;padding:0;border:1px solid var(--line)}
+  .hero .hero-specs li,.hero .hero-specs li:nth-child(odd),.hero .hero-specs li:nth-child(even){display:flex;min-height:86px;align-items:flex-start;flex-direction:column;gap:4px;padding:15px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .hero .hero-specs li:nth-child(even){border-right:0}
+  .hero .hero-specs li:nth-child(n+3){border-bottom:0}
+  .hero .hero-specs b{font-size:14px;line-height:1.25}
+  .hero .hero-specs span{font-size:12px;line-height:1.35}
+}
