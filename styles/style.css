@@ -347,3 +347,7 @@
   .card-buy{column-gap:32px}
   .card-buy::before{top:14px;bottom:22px}
 }
+
+
+/* Mobile table scrolls as one surface without a frozen first column */
+@media(max-width:720px){.table-scroll .sticky{position:static;left:auto;z-index:auto}}
