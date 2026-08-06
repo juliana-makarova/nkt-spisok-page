@@ -263,3 +263,10 @@
 .table-tools.list-mode .list-controls>label{grid-column:3;grid-row:1}
 .table-tools.list-mode .list-controls>nav{grid-column:1/-1;grid-row:2;justify-self:center}
 @media(max-width:900px){.table-tools.list-mode .list-controls{grid-column:1/-1;justify-self:stretch}}
+
+
+/* Center table-mode pagination across the visible table width */
+.table-tools:not(.list-mode) .list-controls{position:relative;grid-template-columns:max-content max-content minmax(0,1fr)}
+.table-tools:not(.list-mode) .list-controls>span{grid-column:1}
+.table-tools:not(.list-mode) .list-controls>label{grid-column:2;justify-self:start}
+.table-tools:not(.list-mode) .list-controls>nav{position:absolute;left:50%;justify-self:auto;transform:translateX(-50%)}
