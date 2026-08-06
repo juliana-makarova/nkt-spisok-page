@@ -228,9 +228,10 @@ body .hero .hero-description-grid p.lead{color:var(--text);font-size:var(--type-
 
 /* Первый экран на мобильных: единая вертикаль CTA и компактные параметры */
 @media(max-width:760px){
+  .hero .hero-grid{align-items:stretch}
   .hero .actions{width:100%;align-items:flex-start}
   .hero .actions .text-link{align-self:flex-start}
-  .hero .hero-specs{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0 0 24px;padding:0;border:1px solid var(--line)}
+  .hero .hero-specs{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0 0 24px;padding:0;border:1px solid var(--line)}
   .hero .hero-specs li,.hero .hero-specs li:nth-child(odd),.hero .hero-specs li:nth-child(even){display:flex;min-height:86px;align-items:flex-start;flex-direction:column;gap:4px;padding:15px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
   .hero .hero-specs li:nth-child(even){border-right:0}
   .hero .hero-specs li:nth-child(n+3){border-bottom:0}
