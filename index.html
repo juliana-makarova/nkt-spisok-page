@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>НКТ — ВЧ/СВЧ кабельные сборки</title>
-<link rel="stylesheet" href="styles/style.css?v=20260721-9">
+<link rel="stylesheet" href="styles/style.css?v=20260806-1">
 <link rel="stylesheet" href="styles/filters.css?v=20260721-8">
 <link rel="stylesheet" href="styles/table-settings.css?v=20260721-1">
 <script src="scripts/images.js?v=20260721-2" defer>
@@ -13,7 +13,9 @@
 </script>
 <script src="scripts/app-list.js?v=20260721-5" defer>
 </script>
-<script src="scripts/table-settings.js?v=20260721-1" defer>
+<script src="scripts/table-settings.js?v=20260806-1" defer>
+</script>
+<script src="scripts/catalog-refinements.js?v=20260806-1" defer>
 </script>
 </head>
 <body>
@@ -257,9 +259,9 @@
 <button class="outline" id="compareSelected">Сравнить выбранное</button>
 <button class="csv-download">Скачать (.CSV)<img src="assets/icons/download-csv.svg?v=20260721-1" alt="Скачать"></button>
 </div>
-<div class="list-controls" hidden>
+<div class="list-controls">
 <span>20 из 609 товаров</span>
-<label>Показывать по <select>
+<label><span>По</span><select aria-label="Количество товаров на странице">
 <option>20</option>
 <option>40</option>
 <option>60</option>
