@@ -238,3 +238,8 @@ body .hero .hero-description-grid p.lead{color:var(--text);font-size:var(--type-
   .hero .hero-specs b{font-size:14px;line-height:1.25}
   .hero .hero-specs span{font-size:12px;line-height:1.35}
 }
+
+/* Реальные фотографии в слайдерах ODC и OFC */
+.slide-placeholder.photo-slide{background:#fff}
+.slide-placeholder.photo-slide:before,.slide-placeholder.photo-slide:after{display:none}
+.slide-placeholder.photo-slide img{display:block;width:100%;height:100%;object-fit:contain}
