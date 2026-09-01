@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="410" height="230" viewBox="0 0 410 230">
+  <rect width="410" height="230" fill="#fff"/>
+  <g fill="none" stroke="#3f72d7" stroke-width="3">
+    <circle cx="155" cy="115" r="42"/>
+    <circle cx="155" cy="115" r="20"/>
+    <path d="M197 92h91l30 23-30 23h-91z"/>
+    <path d="M318 105h34v20h-34"/>
+  </g>
+  <text x="205" y="194" text-anchor="middle" font-family="Roboto,Arial,sans-serif" font-size="14" fill="#646b70">Изображение уточняется</text>
+</svg>
