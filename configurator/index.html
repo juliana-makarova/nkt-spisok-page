@@ -62,7 +62,7 @@
               <label>Интерфейс<select id="typeA"><option value="">Выберите</option></select></label>
               <label>Исполнение<select id="genderA"><option value="male">Вилка</option><option value="female">Розетка</option></select></label>
               <label>Форма<select id="shapeA"><option value="Прямой">Прямой</option><option value="Угловой">Угловой</option><option value="Панельный">Панельный</option></select></label>
-              <label>Тип монтажа<select id="mountA"><option value="Обжим">Обжим</option><option value="Пайка">Пайка</option><option value="Сборный">Сборный</option></select></label>
+              <label>Тип монтажа<select id="mountA"><option value="Обжим">Обжим</option><option value="Пайка + обжим">Пайка + обжим</option><option value="Сборка">Сборка</option></select></label>
             </div>
             <div class="choice-list" id="listA"></div>
           </section>
@@ -71,7 +71,10 @@
             <div class="section-title"><span>02</span><div><h2>Кабель</h2><p>Среда передачи</p></div></div>
             <div class="field-grid">
               <label>Тип кабеля<select id="cableType"><option value="">Выберите</option></select></label>
+              <label>Рабочая частота, МГц<select id="frequency"><option value="">Выберите</option><option>160</option><option>460</option><option>700</option><option>960</option><option>1800</option><option>2100</option><option>2600</option><option>3500</option><option value="custom">Своё значение</option></select></label>
             </div>
+            <div class="field-grid conditional" id="customFrequencyWrap" hidden><span></span><label>Своё значение, МГц<input id="customFrequency" type="number" min="1" max="100000" placeholder="Введите частоту"></label></div>
+            <p class="filter-note" id="frequencyFilterNote">Частота используется как фильтр совместимости кабелей. Диапазоны частот ожидаются от инженеров.</p>
             <div class="choice-list" id="listCable"></div>
             <button class="secondary component-document" id="cableDatasheet" type="button" disabled>Техническое описание кабеля</button>
           </section>
@@ -82,7 +85,7 @@
               <label>Интерфейс<select id="typeB"><option value="">Выберите</option></select></label>
               <label>Исполнение<select id="genderB"><option value="male">Вилка</option><option value="female">Розетка</option></select></label>
               <label>Форма<select id="shapeB"><option value="Прямой">Прямой</option><option value="Угловой">Угловой</option><option value="Панельный">Панельный</option></select></label>
-              <label>Тип монтажа<select id="mountB"><option value="Обжим">Обжим</option><option value="Пайка">Пайка</option><option value="Сборный">Сборный</option></select></label>
+              <label>Тип монтажа<select id="mountB"><option value="Обжим">Обжим</option><option value="Пайка + обжим">Пайка + обжим</option><option value="Сборка">Сборка</option></select></label>
             </div>
             <div class="choice-list" id="listB"></div>
           </section>
@@ -92,12 +95,10 @@
 
           <div class="step-panel" data-panel="1">
           <section class="form-section required-block" id="assemblyParameters">
-            <div class="section-title"><span>04</span><div><h2>Длина и рабочая частота</h2><p>Параметры для изготовления и расчёта</p></div></div>
+            <div class="section-title"><span>04</span><div><h2>Длина сборки</h2><p>Параметр для изготовления и расчёта</p></div></div>
             <div class="field-grid">
               <label>Длина сборки<div class="input-pair"><input id="length" type="number" min="0.15" max="100" step="0.1" value="1"><select id="lengthUnit" aria-label="Единица длины"><option value="m">м</option><option value="cm">см</option><option value="mm">мм</option></select></div></label>
-              <label>Рабочая частота, МГц<select id="frequency"><option value="">Выберите</option><option>160</option><option>460</option><option>700</option><option>960</option><option>1800</option><option>2100</option><option>2600</option><option>3500</option><option value="custom">Своё значение</option></select></label>
             </div>
-            <div class="field-grid conditional" id="customFrequencyWrap" hidden><span></span><label>Своё значение, МГц<input id="customFrequency" type="number" min="1" max="100000" placeholder="Введите частоту"></label></div>
           </section>
           <section class="form-section">
             <div class="section-title"><span>05</span><div><h2>Маркировка</h2><p>Отдельный текст для каждого элемента</p></div></div>
@@ -131,6 +132,7 @@
                 <div><dt>КСВН сборки</dt><dd>Будет рассчитано</dd></div>
                 <div><dt>Фазовый сдвиг</dt><dd>Будет рассчитано</dd></div>
                 <div><dt>Волновое сопротивление</dt><dd>Будет рассчитано</dd></div>
+                <div><dt>Расчётная масса сборки</dt><dd id="reviewWeight">Недостаточно данных</dd></div>
               </dl>
               <p class="data-note">Для численных значений требуются утверждённые характеристики компонентов и инженерные формулы.</p>
             </section>
@@ -156,7 +158,7 @@
             <div><dt>Опции</dt><dd id="summaryOptions">—</dd></div>
           </dl>
           <div class="final-actions" id="finalActions" hidden>
-          <div class="price"><span>Ориентировочная стоимость</span><strong id="price">—</strong><small>Демонстрационный расчёт, не оферта</small></div>
+          <div class="price"><span>Стоимость</span><strong id="price">—</strong><small>Уточняется менеджером после проверки конфигурации</small></div>
           <button class="primary" id="addToCart" type="button" disabled>Добавить в корзину</button>
           <button class="secondary" id="printButton" type="button">Скачать спецификацию</button>
           </div>
@@ -172,6 +174,7 @@
 
   <dialog id="cartDialog"><button class="dialog-close" aria-label="Закрыть">×</button><p class="eyebrow">Корзина</p><h2>Конфигурация добавлена</h2><div id="cartContent"></div><button class="primary" type="button" onclick="this.closest('dialog').close()">Продолжить</button></dialog>
   <dialog id="infoDialog"><button class="dialog-close" aria-label="Закрыть">×</button><p class="eyebrow">Документ компонента</p><h2>Техническое описание кабеля</h2><div id="infoContent"></div><button class="primary" type="button" onclick="this.closest('dialog').close()">Закрыть</button></dialog>
+  <script src="catalog-data.js"></script>
   <script src="configurator.js"></script>
 </body>
 </html>
